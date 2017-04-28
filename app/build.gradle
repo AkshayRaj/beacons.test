@@ -5,13 +5,15 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
+        archivesBaseName = "beacons_test_ark"
         applicationId "com.ark.beacons_test"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.ark.beacons_test.MockTestRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -47,5 +49,11 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
+    // Unit Test dependencies
     testCompile 'junit:junit:4.12'
+
+
+    androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
+
 }
